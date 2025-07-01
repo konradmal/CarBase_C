@@ -196,7 +196,7 @@ void search(struct Cars *set, int count, char choice) {
 		case '2':  // Model
 		    printf("Choose 1 if you want to search for the entire entered name, or 2 if you only know a part:\n");
 		    scanf("%d", &searchOption);
-		
+
 		    if (searchOption == 1) {
 		        printf("Enter the entire model name:\n");
 		    } else if (searchOption == 2) {
@@ -235,8 +235,8 @@ void search(struct Cars *set, int count, char choice) {
 		            scanf("%d", &year);
 		        }
 		        for (; i < count; i++) {
-		            if ((choice == 2 && set[i].year >= min && set[i].year <= max) ||
-		                (choice == 1 && set[i].year == year)) {
+		            if ((searchOption == 2 && set[i].year >= min && set[i].year <= max) ||
+		                (searchOption == 1 && set[i].year == year)) {
 		                printf("\nCar number: %d\n", i + 1);
 		                printf("Brand: %s\n", set[i].brand);
 		                printf("Model: %s\n", set[i].model);
@@ -267,8 +267,8 @@ void search(struct Cars *set, int count, char choice) {
 		            scanf("%d", &capacity);
 		        }
 		        for (; i < count; i++) {
-		            if ((choice == 2 && set[i].capacity >= minCapacity && set[i].capacity <= maxCapacity) ||
-		                (choice == 1 && set[i].capacity == capacity)) {
+		            if ((searchOption == 2 && set[i].capacity >= minCapacity && set[i].capacity <= maxCapacity) ||
+		                (searchOption == 1 && set[i].capacity == capacity)) {
 		                printf("\nCar number: %d\n", i + 1);
 		                printf("Brand: %s\n", set[i].brand);
 		                printf("Model: %s\n", set[i].model);
@@ -314,7 +314,7 @@ void search(struct Cars *set, int count, char choice) {
 		case '6':  // Vehicle Type
 		    printf("Choose 1 if you want to search for a full vehicle type name, or 2 if you know only a part of it:\n");
 		    scanf("%d", &searchOption);
-		
+
 		    if (searchOption == 1) {
 		        printf("Enter the full name of the vehicle type:\n");
 		    } else if (searchOption == 2) {
