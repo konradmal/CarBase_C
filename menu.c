@@ -60,6 +60,10 @@ void executeChoice(struct Cars **carSet, int *count, char choice) {
         printf("8-Back to the main menu\n");
         char searchOption;
         scanf(" %c", &searchOption);
+        if (searchOption == '8') {
+            printf("Back to main menu.\n\n");
+            break;
+        }
         search(*carSet, *count, searchOption);
         break;
     case '5':
