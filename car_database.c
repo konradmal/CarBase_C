@@ -38,7 +38,7 @@ void readCars(struct Cars **set, int *count) {
                   (*set)[i].fuel, (*set)[i].type, (*set)[i].registration) == 7) {
         i++;
         if (i >= capacity) {
-            capacity++;
+            capacity *= 2;
             *set = (struct Cars *)realloc(*set, capacity * sizeof(struct Cars));
             if (!*set) {
                 fprintf(stderr, "Memory reallocation error.\n");
@@ -73,9 +73,9 @@ void addCar(struct Cars **set, int *count) {
     }
     printf("This will be car number %d\n", i + 1);
     printf("Enter brand: ");
-    scanf("%s", (*set)[i].brand);
+    scanf("%99s", (*set)[i].brand);
     printf("Enter model: ");
-    scanf("%s", (*set)[i].model);
+    scanf("%99s", (*set)[i].model);
     printf("Enter year: ");
 	while (scanf("%d", &(*set)[i].year) != 1) {
 	    printf("Invalid input. Please enter a valid year: ");
@@ -84,15 +84,14 @@ void addCar(struct Cars **set, int *count) {
 	printf("Enter capacity: ");
 	while (scanf("%d", &(*set)[i].capacity) != 1) {
 	    printf("Invalid input. Please enter a valid capacity: ");
-	    // Wyczyœæ bufor wejœciowy, aby unikn¹æ nieskoñczonej pêtli w przypadku wprowadzenia nieprawid³owych danych
 	    while (getchar() != '\n');
 	}
     printf("Enter fuel: ");
-    scanf("%s", (*set)[i].fuel);
+    scanf("%99s", (*set)[i].fuel);
     printf("Enter vehicle type: ");
-    scanf("%s", (*set)[i].type);
+    scanf("%99s", (*set)[i].type);
     printf("Enter registration number: ");
-    scanf("%s", (*set)[i].registration);
+    scanf("%99s", (*set)[i].registration);
     (*count)++;
 }
 
@@ -396,11 +395,17 @@ void removeCar(struct Cars **set, int *count) {
         (*set)[j] = (*set)[j + 1];
     }
     (*count)--;
-    *set = realloc(*set, *count * sizeof(struct Cars));
-    if (*set == NULL && *count > 0) {
+    if (count == 0) {
+        free(*set);
+        *set = NULL;
+        return;
+    }
+    struct Cars *tmp = realloc(*set, *count * sizeof **set);
+    if (!tmp) {
         fprintf(stderr, "Memory reallocation error.\n");
         exit(EXIT_FAILURE);
     }
+    *set = tmp;
 }
 
 /**
