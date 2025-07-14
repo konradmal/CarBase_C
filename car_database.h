@@ -12,21 +12,12 @@
  */
 struct Cars {
     char brand[100];         ///< Brand of the car.
-    char model[100];         ///< Model of the car.6
+    char model[100];         ///< Model of the car.
     int year;                ///< Year of manufacture.
     int capacity;            ///< Engine capacity in cm^3.
     char fuel[100];          ///< Type of fuel used.
     char type[100];          ///< Type of the vehicle.
     char registration[100];  ///< Registration number of the car.
-};
-
-/**
- * @struct CarDatabase
- * @brief Structure representing a database of cars.
- */
-struct CarDatabase {
-    struct Cars *cars;  ///< Pointer to an array of cars.
-    int count;          ///< Number of cars in the database.
 };
 
 /**
