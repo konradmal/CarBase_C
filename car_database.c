@@ -177,7 +177,7 @@ void search(struct Cars *set, int count, char choice) {
 		        printf("Invalid option. You should have chosen 1 or 2!\n");
 		        break;
 		    }
-		    scanf("%s", searchTerm);
+		    scanf("%99s", searchTerm);
 		    for (; i < count; i++) {
 		        if ((searchOption == 1 && strcmp(set[i].brand, searchTerm) == 0) ||
 		            (searchOption == 2 && strstr(set[i].brand, searchTerm) != NULL)) {
@@ -204,7 +204,7 @@ void search(struct Cars *set, int count, char choice) {
 		        printf("Invalid option. You should have chosen 1 or 2!\n");
 		        break;
 		    }
-		    scanf("%s", searchTerm);
+		    scanf("%99s", searchTerm);
 		    for (; i < count; i++) {
 		        if ((searchOption == 1 && strcmp(set[i].model, searchTerm) == 0) ||
 		            (searchOption == 2 && strstr(set[i].model, searchTerm) != NULL)) {
@@ -395,7 +395,7 @@ void removeCar(struct Cars **set, int *count) {
         (*set)[j] = (*set)[j + 1];
     }
     (*count)--;
-    if (count == 0) {
+    if (*count == 0) {
         free(*set);
         *set = NULL;
         return;

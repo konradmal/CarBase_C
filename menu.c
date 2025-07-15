@@ -70,5 +70,10 @@ void executeChoice(struct Cars **carSet, int *count, char choice) {
         printf("Remove a car!\n");
         removeCar(carSet, count);
         break;
+    case '6':
+        break;
+    default:
+        printf("Invalid menu option. Try again.\n");
+        break;
     }
 }

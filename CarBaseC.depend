@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1751400804 source:c:\users\konra\onedrive\pulpit\repo\carbase_c\car_database.c
+1752596035 source:c:\users\konra\onedrive\pulpit\repo\carbase_c\car_database.c
 	"car_database.h"
 	<stdio.h>
 	<stdlib.h>
@@ -17,7 +17,7 @@
 1708458823 c:\users\konra\onedrive\pulpit\repo\carbase_c\menu.h
 	"car_database.h"
 
-1706274797 source:c:\users\konra\onedrive\pulpit\repo\carbase_c\menu.c
+1752596373 source:c:\users\konra\onedrive\pulpit\repo\carbase_c\menu.c
 	"menu.h"
 	"car_database.h"
 	<stdio.h>
