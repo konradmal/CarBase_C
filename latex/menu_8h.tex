@@ -1,0 +1,54 @@
+\doxysection{menu.\+h File Reference}
+\hypertarget{menu_8h}{}\label{menu_8h}\index{menu.h@{menu.h}}
+
+
+Header file for the menu-\/related functions.  
+
+
+{\ttfamily \#include "{}car\+\_\+database.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{menu_8h_a59c2926dd9b0968badf463aaf4f91422}{display\+Menu}} ()
+\begin{DoxyCompactList}\small\item\em Displays the main menu of the program. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{menu_8h_a5a50ff7b2b81012cd63c37704e717b59}{execute\+Choice}} (struct \mbox{\hyperlink{struct_cars}{Cars}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}car\+Set, int \texorpdfstring{$\ast$}{*}count, char choice)
+\begin{DoxyCompactList}\small\item\em Executes the user\textquotesingle{}s choice from the main menu. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for the menu-\/related functions. 
+
+This file contains declarations for functions related to displaying the menu and executing user choices. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{menu_8h_a59c2926dd9b0968badf463aaf4f91422}\label{menu_8h_a59c2926dd9b0968badf463aaf4f91422} 
+\index{menu.h@{menu.h}!displayMenu@{displayMenu}}
+\index{displayMenu@{displayMenu}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{displayMenu()}{displayMenu()}}
+{\footnotesize\ttfamily void display\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Displays the main menu of the program. 
+
+This function prints the main menu options to the console. \Hypertarget{menu_8h_a5a50ff7b2b81012cd63c37704e717b59}\label{menu_8h_a5a50ff7b2b81012cd63c37704e717b59} 
+\index{menu.h@{menu.h}!executeChoice@{executeChoice}}
+\index{executeChoice@{executeChoice}!menu.h@{menu.h}}
+\doxysubsubsection{\texorpdfstring{executeChoice()}{executeChoice()}}
+{\footnotesize\ttfamily void execute\+Choice (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_cars}{Cars}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{car\+Set,  }\item[{int \texorpdfstring{$\ast$}{*}}]{count,  }\item[{char}]{choice }\end{DoxyParamCaption})}
+
+
+
+Executes the user\textquotesingle{}s choice from the main menu. 
+
+Based on the user\textquotesingle{}s choice, this function performs the corresponding action.
+
+
+\begin{DoxyParams}{Parameters}
+{\em car\+Set} & Pointer to the car database. \\
+\hline
+{\em count} & Pointer to the number of cars in the database. \\
+\hline
+{\em choice} & The user\textquotesingle{}s menu choice. \\
+\hline
+\end{DoxyParams}

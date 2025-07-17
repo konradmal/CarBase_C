@@ -1,0 +1,71 @@
+\chapter{Car Database Project}
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{Car Database Project@{Car Database Project}}
+\label{md__r_e_a_d_m_e_autotoc_md0}%
+\Hypertarget{md__r_e_a_d_m_e_autotoc_md0}%
+ \hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{\texorpdfstring{Description}{Description}}\label{md__r_e_a_d_m_e_autotoc_md1}
+A simple program written in C for managing a database of cars. It allows for adding, displaying, saving to a file, searching, and removing cars, all through an intuitive menu.\hypertarget{md__r_e_a_d_m_e_autotoc_md2}{}\doxysection{\texorpdfstring{How to Run the Project}{How to Run the Project}}\label{md__r_e_a_d_m_e_autotoc_md2}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Compilation\+:}}
+\begin{DoxyItemize}
+\item Compile the project using an appropriate C compiler, for example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{gcc\ main.c\ car\_database.c\ menu.c\ -\/o\ car\_database}
+
+\end{DoxyCode}
+
+\end{DoxyItemize}
+\item {\bfseries{Running\+:}}
+\begin{DoxyItemize}
+\item After compilation, run the program\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{./car\_database}
+
+\end{DoxyCode}
+
+\end{DoxyItemize}
+\end{DoxyEnumerate}\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysection{\texorpdfstring{Dependencies}{Dependencies}}\label{md__r_e_a_d_m_e_autotoc_md3}
+No additional dependencies. The project uses standard C language functions.\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysection{\texorpdfstring{Using the Main Functions}{Using the Main Functions}}\label{md__r_e_a_d_m_e_autotoc_md4}
+After running the program, use the menu by selecting the appropriate options.\hypertarget{md__r_e_a_d_m_e_autotoc_md5}{}\doxysubsection{\texorpdfstring{1. Adding a Car}{1. Adding a Car}}\label{md__r_e_a_d_m_e_autotoc_md5}
+
+\begin{DoxyItemize}
+\item Choose option {\ttfamily 1} from the menu.
+\item Enter the brand, model, production year, engine capacity, fuel type, vehicle type, and registration number.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md6}{}\doxysubsection{\texorpdfstring{2. Displaying Cars}{2. Displaying Cars}}\label{md__r_e_a_d_m_e_autotoc_md6}
+
+\begin{DoxyItemize}
+\item Choose option {\ttfamily 2} from the menu.
+\item The list of added cars will be displayed.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md7}{}\doxysubsection{\texorpdfstring{3. Saving to a File}{3. Saving to a File}}\label{md__r_e_a_d_m_e_autotoc_md7}
+
+\begin{DoxyItemize}
+\item Choose option {\ttfamily 3} from the menu.
+\item Car data will be saved to the "{}base.\+txt"{} file.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md8}{}\doxysubsection{\texorpdfstring{4. Searching for Cars}{4. Searching for Cars}}\label{md__r_e_a_d_m_e_autotoc_md8}
+
+\begin{DoxyItemize}
+\item Choose option {\ttfamily 4} from the menu.
+\item Choose a search parameter\+: brand, model, year, capacity, fuel, type, registration number.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md9}{}\doxysubsection{\texorpdfstring{5. Removing a Car}{5. Removing a Car}}\label{md__r_e_a_d_m_e_autotoc_md9}
+
+\begin{DoxyItemize}
+\item Choose option {\ttfamily 5} from the menu.
+\item Enter the car number to remove.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md10}{}\doxysubsection{\texorpdfstring{6. Exit}{6. Exit}}\label{md__r_e_a_d_m_e_autotoc_md10}
+
+\begin{DoxyItemize}
+\item Choose option {\ttfamily 6} from the menu to exit the program.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md11}{}\doxysection{\texorpdfstring{For Developers}{For Developers}}\label{md__r_e_a_d_m_e_autotoc_md11}
+If you want to browse or modify the code, use the available source files\+:
+
+
+\begin{DoxyItemize}
+\item {\ttfamily \doxylink{main_8c}{main.\+c}}\+: The main file containing the {\ttfamily main} function.
+\item {\ttfamily \doxylink{car__database_8c}{car\+\_\+database.\+c}}\+: Implementation of database functions.
+\item {\ttfamily \doxylink{menu_8c}{menu.\+c}}\+: Implementation of menu handling functions.
+\end{DoxyItemize}\hypertarget{md__r_e_a_d_m_e_autotoc_md12}{}\doxysection{\texorpdfstring{Author}{Author}}\label{md__r_e_a_d_m_e_autotoc_md12}
+Author\+: Konrad Maleńczak 

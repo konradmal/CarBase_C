@@ -1,0 +1,186 @@
+\doxysection{car\+\_\+database.\+c File Reference}
+\hypertarget{car__database_8c}{}\label{car__database_8c}\index{car\_database.c@{car\_database.c}}
+
+
+Implementation of functions for managing a car database.  
+
+
+{\ttfamily \#include "{}car\+\_\+database.\+h"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{car__database_8c_a67f9b636bddf4081d4dfa813329aae3e}{read\+Cars}} (struct \mbox{\hyperlink{struct_cars}{Cars}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}set, int \texorpdfstring{$\ast$}{*}count)
+\begin{DoxyCompactList}\small\item\em Reads cars from a file and initializes the car database. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{car__database_8c_aee6ae427aace99caaed7835b90423a0e}{add\+Car}} (struct \mbox{\hyperlink{struct_cars}{Cars}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}set, int \texorpdfstring{$\ast$}{*}count)
+\begin{DoxyCompactList}\small\item\em Adds a new car to the database. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{car__database_8c_a3940b8524d94a6ad0a3a2805a8256533}{show\+Cars}} (const struct \mbox{\hyperlink{struct_cars}{Cars}} \texorpdfstring{$\ast$}{*}set, int count)
+\begin{DoxyCompactList}\small\item\em Displays information about cars in the database. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{car__database_8c_a98fdc298593a921bed3af6772a25e101}{save\+Cars}} (const struct \mbox{\hyperlink{struct_cars}{Cars}} \texorpdfstring{$\ast$}{*}set, int count)
+\begin{DoxyCompactList}\small\item\em Saves the car database to a file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{car__database_8c_a55e9398c0e12ecd2f7e8f6e48de6b827}{search}} (struct \mbox{\hyperlink{struct_cars}{Cars}} \texorpdfstring{$\ast$}{*}set, int count, char choice)
+\begin{DoxyCompactList}\small\item\em Searches for cars in the database based on user-\/specified criteria. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{car__database_8c_abb69be428be91c094b4efc2f9087ec7e}{remove\+Car}} (struct \mbox{\hyperlink{struct_cars}{Cars}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}set, int \texorpdfstring{$\ast$}{*}count)
+\begin{DoxyCompactList}\small\item\em Removes a car from the database based on the user-\/specified car number. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{car__database_8c_a9919a052da265522c844961d434f2050}{free\+Car\+Array}} (struct \mbox{\hyperlink{struct_cars}{Cars}} \texorpdfstring{$\ast$}{*}set)
+\begin{DoxyCompactList}\small\item\em Frees the memory allocated for the car database. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementation of functions for managing a car database. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{car__database_8c_aee6ae427aace99caaed7835b90423a0e}\label{car__database_8c_aee6ae427aace99caaed7835b90423a0e} 
+\index{car\_database.c@{car\_database.c}!addCar@{addCar}}
+\index{addCar@{addCar}!car\_database.c@{car\_database.c}}
+\doxysubsubsection{\texorpdfstring{addCar()}{addCar()}}
+{\footnotesize\ttfamily void add\+Car (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_cars}{Cars}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{set,  }\item[{int \texorpdfstring{$\ast$}{*}}]{count }\end{DoxyParamCaption})}
+
+
+
+Adds a new car to the database. 
+
+This function adds a new car to the car database. It dynamically reallocates memory to accommodate the new car entry.
+
+
+\begin{DoxyParams}{Parameters}
+{\em set} & Pointer to the car database. \\
+\hline
+{\em count} & Pointer to the number of cars in the database. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{car__database_8c_a9919a052da265522c844961d434f2050}\label{car__database_8c_a9919a052da265522c844961d434f2050} 
+\index{car\_database.c@{car\_database.c}!freeCarArray@{freeCarArray}}
+\index{freeCarArray@{freeCarArray}!car\_database.c@{car\_database.c}}
+\doxysubsubsection{\texorpdfstring{freeCarArray()}{freeCarArray()}}
+{\footnotesize\ttfamily void free\+Car\+Array (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_cars}{Cars}} \texorpdfstring{$\ast$}{*}}]{set }\end{DoxyParamCaption})}
+
+
+
+Frees the memory allocated for the car database. 
+
+This function frees the memory allocated for the car database array. It should be called before exiting the program to avoid memory leaks.
+
+
+\begin{DoxyParams}{Parameters}
+{\em set} & Pointer to the car database. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{car__database_8c_a67f9b636bddf4081d4dfa813329aae3e}\label{car__database_8c_a67f9b636bddf4081d4dfa813329aae3e} 
+\index{car\_database.c@{car\_database.c}!readCars@{readCars}}
+\index{readCars@{readCars}!car\_database.c@{car\_database.c}}
+\doxysubsubsection{\texorpdfstring{readCars()}{readCars()}}
+{\footnotesize\ttfamily void read\+Cars (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_cars}{Cars}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{set,  }\item[{int \texorpdfstring{$\ast$}{*}}]{count }\end{DoxyParamCaption})}
+
+
+
+Reads cars from a file and initializes the car database. 
+
+This function reads car data from a file named "{}base.\+txt"{}. It dynamically allocates memory for the car database, and each car is stored in a struct \doxylink{struct_cars}{Cars} array. The function keeps expanding the memory as needed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em set} & Pointer to the car database. \\
+\hline
+{\em count} & Pointer to the number of cars in the database. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{car__database_8c_abb69be428be91c094b4efc2f9087ec7e}\label{car__database_8c_abb69be428be91c094b4efc2f9087ec7e} 
+\index{car\_database.c@{car\_database.c}!removeCar@{removeCar}}
+\index{removeCar@{removeCar}!car\_database.c@{car\_database.c}}
+\doxysubsubsection{\texorpdfstring{removeCar()}{removeCar()}}
+{\footnotesize\ttfamily void remove\+Car (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_cars}{Cars}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{set,  }\item[{int \texorpdfstring{$\ast$}{*}}]{count }\end{DoxyParamCaption})}
+
+
+
+Removes a car from the database based on the user-\/specified car number. 
+
+Removes a car from the database.
+
+This function allows the user to remove a car from the database by specifying the car number. The user is prompted to enter the car number they want to remove, and the function will remove the corresponding car entry from the database. Memory is reallocated to adjust the size of the database.
+
+
+\begin{DoxyParams}{Parameters}
+{\em set} & Pointer to the car database. \\
+\hline
+{\em count} & Pointer to the number of cars in the database. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{car__database_8c_a98fdc298593a921bed3af6772a25e101}\label{car__database_8c_a98fdc298593a921bed3af6772a25e101} 
+\index{car\_database.c@{car\_database.c}!saveCars@{saveCars}}
+\index{saveCars@{saveCars}!car\_database.c@{car\_database.c}}
+\doxysubsubsection{\texorpdfstring{saveCars()}{saveCars()}}
+{\footnotesize\ttfamily void save\+Cars (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{struct_cars}{Cars}} \texorpdfstring{$\ast$}{*}}]{set,  }\item[{int}]{count }\end{DoxyParamCaption})}
+
+
+
+Saves the car database to a file. 
+
+This function saves the car database to a file named "{}base.\+txt"{}. It writes the details of each car to the file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em set} & Pointer to the car database. \\
+\hline
+{\em count} & Number of cars in the database. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{car__database_8c_a55e9398c0e12ecd2f7e8f6e48de6b827}\label{car__database_8c_a55e9398c0e12ecd2f7e8f6e48de6b827} 
+\index{car\_database.c@{car\_database.c}!search@{search}}
+\index{search@{search}!car\_database.c@{car\_database.c}}
+\doxysubsubsection{\texorpdfstring{search()}{search()}}
+{\footnotesize\ttfamily void search (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_cars}{Cars}} \texorpdfstring{$\ast$}{*}}]{set,  }\item[{int}]{count,  }\item[{char}]{choice }\end{DoxyParamCaption})}
+
+
+
+Searches for cars in the database based on user-\/specified criteria. 
+
+Searches for cars in the database based on a specified parameter.
+
+This function allows the user to search for cars in the database based on different criteria\+:
+\begin{DoxyEnumerate}
+\item Brand
+\item Model
+\item Year
+\item Engine Capacity
+\item Fuel
+\item Vehicle Type
+\item Registration Number
+\item Return to the main menu
+\end{DoxyEnumerate}
+
+For each criterion, the user can choose to search for an exact match or a partial match.
+
+
+\begin{DoxyParams}{Parameters}
+{\em set} & Pointer to the car database. \\
+\hline
+{\em count} & Number of cars in the database. \\
+\hline
+{\em choice} & User\textquotesingle{}s choice for the search criterion. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{car__database_8c_a3940b8524d94a6ad0a3a2805a8256533}\label{car__database_8c_a3940b8524d94a6ad0a3a2805a8256533} 
+\index{car\_database.c@{car\_database.c}!showCars@{showCars}}
+\index{showCars@{showCars}!car\_database.c@{car\_database.c}}
+\doxysubsubsection{\texorpdfstring{showCars()}{showCars()}}
+{\footnotesize\ttfamily void show\+Cars (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{struct_cars}{Cars}} \texorpdfstring{$\ast$}{*}}]{set,  }\item[{int}]{count }\end{DoxyParamCaption})}
+
+
+
+Displays information about cars in the database. 
+
+This function prints information about each car in the car database, including its number, brand, model, year, engine capacity, fuel type, vehicle type, and registration number.
+
+
+\begin{DoxyParams}{Parameters}
+{\em set} & Pointer to the car database. \\
+\hline
+{\em count} & Number of cars in the database. \\
+\hline
+\end{DoxyParams}

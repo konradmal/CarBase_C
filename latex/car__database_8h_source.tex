@@ -1,0 +1,34 @@
+\doxysection{car\+\_\+database.\+h}
+\hypertarget{car__database_8h_source}{}\label{car__database_8h_source}\mbox{\hyperlink{car__database_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#ifndef\ CAR\_DATABASE\_H}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ CAR\_DATABASE\_H}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_cars}{Cars}}\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_cars_a44cff95dd214bce23b459f825dda08b5}{brand}}[100];\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_cars_a8880d08e6585cb622857f84a3cf24253}{model}}[100];\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_cars_abeac221e38b7b9ce7df8722c842bf671}{year}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{struct_cars_adbe66a087ac3fd4a5b0566f64ca2d12b}{capacity}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_cars_ad10605ee2ed5e576a7a92f59ca4556c6}{fuel}}[100];\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_cars_a43ea3020629a4cee4a84fe117904a509}{type}}[100];\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{struct_cars_a9d8d179aeb399d1f4da61f96acf38a8f}{registration}}[100];\ \ }
+\DoxyCodeLine{00021\ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00028\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{car__database_8h_a67f9b636bddf4081d4dfa813329aae3e}{readCars}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{struct_cars}{Cars}}\ **set,\ \textcolor{keywordtype}{int}\ *count);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{car__database_8h_aee6ae427aace99caaed7835b90423a0e}{addCar}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{struct_cars}{Cars}}\ **set,\ \textcolor{keywordtype}{int}\ *count);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{car__database_8h_a3940b8524d94a6ad0a3a2805a8256533}{showCars}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{struct_cars}{Cars}}\ *set,\ \textcolor{keywordtype}{int}\ count);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{car__database_8h_a98fdc298593a921bed3af6772a25e101}{saveCars}}(\textcolor{keyword}{const}\ \textcolor{keyword}{struct}\ \mbox{\hyperlink{struct_cars}{Cars}}\ *set,\ \textcolor{keywordtype}{int}\ count);}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00057\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{car__database_8h_a55e9398c0e12ecd2f7e8f6e48de6b827}{search}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{struct_cars}{Cars}}\ *set,\ \textcolor{keywordtype}{int}\ count,\ \textcolor{keywordtype}{char}\ choice);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00064\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{car__database_8h_abb69be428be91c094b4efc2f9087ec7e}{removeCar}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{struct_cars}{Cars}}\ **set,\ \textcolor{keywordtype}{int}\ *count);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00070\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{car__database_8h_a9919a052da265522c844961d434f2050}{freeCarArray}}(\textcolor{keyword}{struct}\ \mbox{\hyperlink{struct_cars}{Cars}}\ *set);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CAR\_DATABASE\_H}}
+
+\end{DoxyCode}
