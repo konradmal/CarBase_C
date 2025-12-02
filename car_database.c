@@ -380,6 +380,10 @@ void search(struct Cars *set, int count, char choice) {
  * @param count Pointer to the number of cars in the database.
  */
 void removeCar(struct Cars **set, int *count) {
+    if (*count == 0) {
+        printf("No cars to remove.\n");
+        return;
+    }
     printf("Which car number do you want to remove?\n");
     int carNumberToRemove;
     while (1) {

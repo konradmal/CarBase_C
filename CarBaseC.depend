@@ -1,23 +1,23 @@
 # depslib dependency file v1.0
-1752596035 source:c:\users\konra\onedrive\pulpit\repo\carbase_c\car_database.c
+1752592435 source:c:\users\konra\onedrive\pulpit\repo\carbase_c\car_database.c
 	"car_database.h"
 	<stdio.h>
 	<stdlib.h>
 	<stddef.h>
 	<string.h>
 
-1752490760 c:\users\konra\onedrive\pulpit\repo\carbase_c\car_database.h
+1752487160 c:\users\konra\onedrive\pulpit\repo\carbase_c\car_database.h
 
-1706274808 source:c:\users\konra\onedrive\pulpit\repo\carbase_c\main.c
+1706271208 source:c:\users\konra\onedrive\pulpit\repo\carbase_c\main.c
 	"car_database.h"
 	"menu.h"
 	<stdio.h>
 	<stddef.h>
 
-1708458823 c:\users\konra\onedrive\pulpit\repo\carbase_c\menu.h
+1708455223 c:\users\konra\onedrive\pulpit\repo\carbase_c\menu.h
 	"car_database.h"
 
-1752596373 source:c:\users\konra\onedrive\pulpit\repo\carbase_c\menu.c
+1752592773 source:c:\users\konra\onedrive\pulpit\repo\carbase_c\menu.c
 	"menu.h"
 	"car_database.h"
 	<stdio.h>
