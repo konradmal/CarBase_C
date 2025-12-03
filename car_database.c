@@ -168,14 +168,15 @@ void search(struct Cars *set, int count, char choice) {
     switch (choice) {
 		case '1':  // Brand
 		    printf("Choose 1 if you want to search for the entire entered name, or 2 if you only know a part:\n");
-		    scanf("%d", &searchOption);
+		    if (scanf("%d", &searchOption) != 1) {
+                printf("Invalid option. You should have chosen 1 or 2!\n");
+                while (getchar() != '\n');
+                break;
+            }
 		    if (searchOption == 1) {
 		        printf("Enter the entire brand name:\n");
 		    } else if (searchOption == 2) {
 		        printf("Enter a part of the brand name:\n");
-		    } else {
-		        printf("Invalid option. You should have chosen 1 or 2!\n");
-		        break;
 		    }
 		    scanf("%99s", searchTerm);
 		    for (; i < count; i++) {
@@ -221,17 +222,33 @@ void search(struct Cars *set, int count, char choice) {
 		    break;
         case '3':  // Year
 		    printf("Choose 1 if you want to search for a specific year, or 2 if you want to search within a range of years.\n");
-		    scanf("%d", &searchOption);
+		    if (scanf("%d", &searchOption) != 1) {
+                printf("Invalid option. You should have chosen 1 or 2!\n");
+                while (getchar() != '\n');
+                break;
+            }
 		    if (searchOption == 1 || searchOption == 2) {
 		        int min, max, year;
 		        if (searchOption == 2) {
 		            printf("Enter the minimum year to search for:\n");
-		            scanf("%d", &min);
+		            if (scanf("%d", &min) != 1) {
+                        printf("Invalid year.\n");
+                        while (getchar() != '\n');
+                        break;
+                    }
 		            printf("Enter the maximum year to search for:\n");
-		            scanf("%d", &max);
+		            if (scanf("%d", &max) != 1) { // CHANGED
+                        printf("Invalid year.\n");
+                        while (getchar() != '\n');
+                        break;
+                    }
 		        } else {
 		            printf("Enter the year to search for:\n");
-		            scanf("%d", &year);
+		            if (scanf("%d", &year) != 1) { // CHANGED
+                        printf("Invalid year.\n");
+                        while (getchar() != '\n');
+                        break;
+                    }
 		        }
 		        for (; i < count; i++) {
 		            if ((searchOption == 2 && set[i].year >= min && set[i].year <= max) ||
@@ -295,7 +312,7 @@ void search(struct Cars *set, int count, char choice) {
 		        break;
 		    }
 		    char fuel[50];
-		    scanf("%s", fuel);
+		    scanf("%49s", fuel);
 		    for (; i < count; i++) {
 		        if ((searchOption == 2 && strstr(set[i].fuel, fuel) != NULL) ||
 		            (searchOption == 1 && strcmp(set[i].fuel, fuel) == 0)) {
@@ -323,7 +340,7 @@ void search(struct Cars *set, int count, char choice) {
 		        break;
 		    }
 		    char type[50];
-		    scanf("%s", type);
+		    scanf("%49s", type);
 		    for (; i < count; i++) {
 		        if ((searchOption == 2 && strstr(set[i].type, type) != NULL) ||
 		            (searchOption == 1 && strcmp(set[i].type, type) == 0)) {
@@ -340,17 +357,18 @@ void search(struct Cars *set, int count, char choice) {
 		    break;
 		case '7':  // Registration Number
 		    printf("Choose 1 if you want to search for a full registration number, or 2 if you know only a part of it:\n");
-		    scanf("%d", &searchOption);
+		    if (scanf("%d", &searchOption) != 1) {
+                printf("Invalid option. You should have chosen 1 or 2!\n");
+                while (getchar() != '\n');
+                break;
+            }
 		    if (searchOption == 1) {
 		        printf("Enter the full registration number:\n");
 		    } else if (searchOption == 2) {
 		        printf("Enter the full registration number or a part of it:\n");
-		    } else {
-		        printf("Invalid option. You should have chosen 1 or 2!\n");
-		        break;
 		    }
 		    char reg[50];
-		    scanf("%s", reg);
+		    scanf("%s49", reg);
 		    for (; i < count; i++) {
 		        if ((searchOption == 2 && strstr(set[i].registration, reg) != NULL) ||
 		            (searchOption == 1 && strcmp(set[i].registration, reg) == 0)) {
