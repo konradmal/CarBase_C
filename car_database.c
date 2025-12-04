@@ -6,7 +6,6 @@
 #include "car_database.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <stddef.h>
 #include <string.h>
 
 /**
@@ -23,6 +22,9 @@ void readCars(struct Cars **set, int *count) {
     FILE *fptr = fopen("base.txt", "r");
     if (!fptr) {
         printf("Unable to open the file for reading.\n");
+        *set = NULL;
+        *count = 0;
+        return;
         return;
     }
 
@@ -30,27 +32,27 @@ void readCars(struct Cars **set, int *count) {
     *set = (struct Cars *)malloc(capacity * sizeof(struct Cars));
     if (!*set) {
         fprintf(stderr, "Memory allocation error.\n");
+        fclose(fptr);
         exit(EXIT_FAILURE);
     }
     int i = 0;
-    while (fscanf(fptr, "%s %s %d %d %s %s %s",
+    while (fscanf(fptr, "%99s %99s %d %d %99s %99s %99s",
                   (*set)[i].brand, (*set)[i].model, &(*set)[i].year, &(*set)[i].capacity,
                   (*set)[i].fuel, (*set)[i].type, (*set)[i].registration) == 7) {
         i++;
         if (i >= capacity) {
             capacity *= 2;
-            *set = (struct Cars *)realloc(*set, capacity * sizeof(struct Cars));
-            if (!*set) {
+            struct Cars *tmp = (struct Cars *)realloc(*set, capacity * sizeof(struct Cars));
+            if (!tmp) {
                 fprintf(stderr, "Memory reallocation error.\n");
+                free(*set);
+                fclose(fptr);
                 exit(EXIT_FAILURE);
             }
+            *set = tmp;
         }
     }
     *count = i;
-    if (!*set) {
-        fprintf(stderr, "Memory allocation error.\n");
-        exit(EXIT_FAILURE);
-    }
     printf("Loaded %d records from the file.\n", i);
     fclose(fptr);
 }

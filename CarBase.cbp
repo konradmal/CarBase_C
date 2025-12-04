@@ -6,6 +6,8 @@
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build />
-		<Extensions />
+		<Extensions>
+			<lib_finder disable_auto="1" />
+		</Extensions>
 	</Project>
 </CodeBlocks_project_file>

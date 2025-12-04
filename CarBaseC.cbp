@@ -28,8 +28,6 @@
 		<Unit filename="menu.h">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Extensions>
-			<lib_finder disable_auto="1" />
-		</Extensions>
+		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
