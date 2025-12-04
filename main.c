@@ -6,15 +6,14 @@
 #include "car_database.h"
 #include "menu.h"
 #include <stdio.h>
-#include <stddef.h>
 
 
 /**
  * @brief Main function for the car database management program.
- * 
+ *
  * This program allows users to manage a database of cars, including adding cars,
  * displaying the cars, saving to a file, searching, removing cars, and exiting the program.
- * 
+ *
  * @return 0 on successful execution.
  */
 int main() {
