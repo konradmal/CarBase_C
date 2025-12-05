@@ -54,7 +54,7 @@ void saveCars(const struct Cars *set, int count);
  * @param count Number of cars in the database.
  * @param choice Parameter for searching (e.g., brand, model, year).
  */
-void search(struct Cars *set, int count, char choice);
+void search(const struct Cars *set, int count, char choice);
 
 /**
  * @brief Removes a car from the database.

@@ -6,13 +6,12 @@
 	<stddef.h>
 	<string.h>
 
-1752487160 c:\users\konra\onedrive\pulpit\repo\carbase_c\car_database.h
+1764918897 c:\users\konra\onedrive\pulpit\repo\carbase_c\car_database.h
 
-1706271208 source:c:\users\konra\onedrive\pulpit\repo\carbase_c\main.c
+1764830119 source:c:\users\konra\onedrive\pulpit\repo\carbase_c\main.c
 	"car_database.h"
 	"menu.h"
 	<stdio.h>
-	<stddef.h>
 
 1708455223 c:\users\konra\onedrive\pulpit\repo\carbase_c\menu.h
 	"car_database.h"

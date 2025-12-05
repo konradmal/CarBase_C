@@ -25,7 +25,6 @@ void readCars(struct Cars **set, int *count) {
         *set = NULL;
         *count = 0;
         return;
-        return;
     }
 
     int capacity = 1;
@@ -68,11 +67,12 @@ void readCars(struct Cars **set, int *count) {
  */
 void addCar(struct Cars **set, int *count) {
     int i = *count;
-    *set = realloc(*set, (*count + 1) * sizeof(struct Cars));
+    struct Cars *tmp = (struct Cars *)realloc(*set, (*count + 1) * sizeof(struct Cars));
     if (*set == NULL) {
         fprintf(stderr, "Memory allocation error.\n");
         exit(EXIT_FAILURE);
     }
+    *set = tmp;
     printf("This will be car number %d\n", i + 1);
     printf("Enter brand: ");
     scanf("%99s", (*set)[i].brand);
@@ -98,6 +98,26 @@ void addCar(struct Cars **set, int *count) {
 }
 
 /**
+ * @brief Prints details of a single car.
+ *
+ * This is an internal helper function used to display
+ * all fields of a single car in a consistent format.
+ *
+ * @param car Pointer to the car to print.
+ * @param index Zero-based index of the car in the array (used to display car number).
+ */
+static void printCar(const struct Cars *car, int index) {
+    printf("\nCar number: %d\n", index + 1);
+    printf("Brand: %s\n", car->brand);
+    printf("Model: %s\n", car->model);
+    printf("Year: %d\n", car->year);
+    printf("Engine capacity: %d cm^3\n", car->capacity);
+    printf("Fuel: %s\n", car->fuel);
+    printf("Vehicle type: %s\n", car->type);
+    printf("Registration number: %s\n", car->registration);
+}
+
+/**
  * @brief Displays information about cars in the database.
  *
  * This function prints information about each car in the car database, including its number, brand,
@@ -106,17 +126,19 @@ void addCar(struct Cars **set, int *count) {
  * @param set Pointer to the car database.
  * @param count Number of cars in the database.
  */
+
 void showCars(const struct Cars *set, int count) {
     if (count == 0) {
         printf("No cars in the database.\n");
         return;
     }
+
     printf("List of cars in the database:\n");
-    int i = 0;
-    for (; i < count; i++) {
-        printf("\nCar number: %d\nBrand: %s\nModel: %s\nYear: %d\nEngine capacity: %d cm^3\nFuel: %s\nVehicle type: %s\nRegistration number: %s\n",
-               i + 1, set[i].brand, set[i].model, set[i].year, set[i].capacity, set[i].fuel, set[i].type, set[i].registration);
+
+    for (int i = 0; i < count; i++) {
+        printCar(&set[i], i);
     }
+
     printf("\n");
 }
 
@@ -135,8 +157,7 @@ void saveCars(const struct Cars *set, int count) {
         printf("Unable to open the file for writing.\n");
         return;
     }
-    int j = 0;
-    for (; j < count; j++) {
+    for (int j = 0; j < count; j++) {
         fprintf(fptr, "%s\n%s\n%d\n%d\n%s\n%s\n%s%s",
                 set[j].brand, set[j].model, set[j].year, set[j].capacity,
                 set[j].fuel, set[j].type, set[j].registration, (j == count - 1) ? "" : "\n");
@@ -163,7 +184,11 @@ void saveCars(const struct Cars *set, int count) {
  * @param count Number of cars in the database.
  * @param choice User's choice for the search criterion.
  */
-void search(struct Cars *set, int count, char choice) {
+void search(const struct Cars *set, int count, char choice) {
+    if (count == 0) {
+        printf("No cars in the database.\n");
+        return;
+    }
 	int i = 0;
 	int searchOption;
 	char searchTerm[100];
@@ -385,7 +410,9 @@ void search(struct Cars *set, int count, char choice) {
 		        }
 		    }
 		    break;
-        case '8': break;  // Return to the main menu
+        case '8':
+        default:
+            break;  // Return to the main menu
     }
 }
 
