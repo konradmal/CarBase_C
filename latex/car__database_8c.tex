@@ -8,7 +8,6 @@ Implementation of functions for managing a car database.
 {\ttfamily \#include "{}car\+\_\+database.\+h"{}}\newline
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
-{\ttfamily \#include $<$stddef.\+h$>$}\newline
 {\ttfamily \#include $<$string.\+h$>$}\newline
 \doxysubsubsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -21,7 +20,7 @@ void \mbox{\hyperlink{car__database_8c_a3940b8524d94a6ad0a3a2805a8256533}{show\+
 \begin{DoxyCompactList}\small\item\em Displays information about cars in the database. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{car__database_8c_a98fdc298593a921bed3af6772a25e101}{save\+Cars}} (const struct \mbox{\hyperlink{struct_cars}{Cars}} \texorpdfstring{$\ast$}{*}set, int count)
 \begin{DoxyCompactList}\small\item\em Saves the car database to a file. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{car__database_8c_a55e9398c0e12ecd2f7e8f6e48de6b827}{search}} (struct \mbox{\hyperlink{struct_cars}{Cars}} \texorpdfstring{$\ast$}{*}set, int count, char choice)
+void \mbox{\hyperlink{car__database_8c_a30ebe1eca178a6ac70f8b515767905cd}{search}} (const struct \mbox{\hyperlink{struct_cars}{Cars}} \texorpdfstring{$\ast$}{*}set, int count, char choice)
 \begin{DoxyCompactList}\small\item\em Searches for cars in the database based on user-\/specified criteria. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{car__database_8c_abb69be428be91c094b4efc2f9087ec7e}{remove\+Car}} (struct \mbox{\hyperlink{struct_cars}{Cars}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}set, int \texorpdfstring{$\ast$}{*}count)
 \begin{DoxyCompactList}\small\item\em Removes a car from the database based on the user-\/specified car number. \end{DoxyCompactList}\item 
@@ -34,12 +33,14 @@ Implementation of functions for managing a car database.
 
 
 
+\label{doc-func-members}
+\Hypertarget{car__database_8c_doc-func-members}
 \doxysubsection{Function Documentation}
-\Hypertarget{car__database_8c_aee6ae427aace99caaed7835b90423a0e}\label{car__database_8c_aee6ae427aace99caaed7835b90423a0e} 
-\index{car\_database.c@{car\_database.c}!addCar@{addCar}}
+\Hypertarget{car__database_8c_aee6ae427aace99caaed7835b90423a0e}\index{car\_database.c@{car\_database.c}!addCar@{addCar}}
 \index{addCar@{addCar}!car\_database.c@{car\_database.c}}
 \doxysubsubsection{\texorpdfstring{addCar()}{addCar()}}
-{\footnotesize\ttfamily void add\+Car (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_cars}{Cars}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{set,  }\item[{int \texorpdfstring{$\ast$}{*}}]{count }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{car__database_8c_aee6ae427aace99caaed7835b90423a0e} 
+void add\+Car (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_cars}{Cars}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{set}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{count}{}\end{DoxyParamCaption})}
 
 
 
@@ -54,11 +55,11 @@ This function adds a new car to the car database. It dynamically reallocates mem
 {\em count} & Pointer to the number of cars in the database. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{car__database_8c_a9919a052da265522c844961d434f2050}\label{car__database_8c_a9919a052da265522c844961d434f2050} 
-\index{car\_database.c@{car\_database.c}!freeCarArray@{freeCarArray}}
+\Hypertarget{car__database_8c_a9919a052da265522c844961d434f2050}\index{car\_database.c@{car\_database.c}!freeCarArray@{freeCarArray}}
 \index{freeCarArray@{freeCarArray}!car\_database.c@{car\_database.c}}
 \doxysubsubsection{\texorpdfstring{freeCarArray()}{freeCarArray()}}
-{\footnotesize\ttfamily void free\+Car\+Array (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_cars}{Cars}} \texorpdfstring{$\ast$}{*}}]{set }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{car__database_8c_a9919a052da265522c844961d434f2050} 
+void free\+Car\+Array (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_cars}{Cars}} \texorpdfstring{$\ast$}{*}}]{set}{}\end{DoxyParamCaption})}
 
 
 
@@ -71,11 +72,11 @@ This function frees the memory allocated for the car database array. It should b
 {\em set} & Pointer to the car database. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{car__database_8c_a67f9b636bddf4081d4dfa813329aae3e}\label{car__database_8c_a67f9b636bddf4081d4dfa813329aae3e} 
-\index{car\_database.c@{car\_database.c}!readCars@{readCars}}
+\Hypertarget{car__database_8c_a67f9b636bddf4081d4dfa813329aae3e}\index{car\_database.c@{car\_database.c}!readCars@{readCars}}
 \index{readCars@{readCars}!car\_database.c@{car\_database.c}}
 \doxysubsubsection{\texorpdfstring{readCars()}{readCars()}}
-{\footnotesize\ttfamily void read\+Cars (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_cars}{Cars}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{set,  }\item[{int \texorpdfstring{$\ast$}{*}}]{count }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{car__database_8c_a67f9b636bddf4081d4dfa813329aae3e} 
+void read\+Cars (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_cars}{Cars}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{set}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{count}{}\end{DoxyParamCaption})}
 
 
 
@@ -90,11 +91,11 @@ This function reads car data from a file named "{}base.\+txt"{}. It dynamically 
 {\em count} & Pointer to the number of cars in the database. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{car__database_8c_abb69be428be91c094b4efc2f9087ec7e}\label{car__database_8c_abb69be428be91c094b4efc2f9087ec7e} 
-\index{car\_database.c@{car\_database.c}!removeCar@{removeCar}}
+\Hypertarget{car__database_8c_abb69be428be91c094b4efc2f9087ec7e}\index{car\_database.c@{car\_database.c}!removeCar@{removeCar}}
 \index{removeCar@{removeCar}!car\_database.c@{car\_database.c}}
 \doxysubsubsection{\texorpdfstring{removeCar()}{removeCar()}}
-{\footnotesize\ttfamily void remove\+Car (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_cars}{Cars}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{set,  }\item[{int \texorpdfstring{$\ast$}{*}}]{count }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{car__database_8c_abb69be428be91c094b4efc2f9087ec7e} 
+void remove\+Car (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_cars}{Cars}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{set}{, }\item[{int \texorpdfstring{$\ast$}{*}}]{count}{}\end{DoxyParamCaption})}
 
 
 
@@ -111,11 +112,11 @@ This function allows the user to remove a car from the database by specifying th
 {\em count} & Pointer to the number of cars in the database. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{car__database_8c_a98fdc298593a921bed3af6772a25e101}\label{car__database_8c_a98fdc298593a921bed3af6772a25e101} 
-\index{car\_database.c@{car\_database.c}!saveCars@{saveCars}}
+\Hypertarget{car__database_8c_a98fdc298593a921bed3af6772a25e101}\index{car\_database.c@{car\_database.c}!saveCars@{saveCars}}
 \index{saveCars@{saveCars}!car\_database.c@{car\_database.c}}
 \doxysubsubsection{\texorpdfstring{saveCars()}{saveCars()}}
-{\footnotesize\ttfamily void save\+Cars (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{struct_cars}{Cars}} \texorpdfstring{$\ast$}{*}}]{set,  }\item[{int}]{count }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{car__database_8c_a98fdc298593a921bed3af6772a25e101} 
+void save\+Cars (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{struct_cars}{Cars}} \texorpdfstring{$\ast$}{*}}]{set}{, }\item[{int}]{count}{}\end{DoxyParamCaption})}
 
 
 
@@ -125,16 +126,16 @@ This function saves the car database to a file named "{}base.\+txt"{}. It writes
 
 
 \begin{DoxyParams}{Parameters}
-{\em set} & Pointer to the car database. \\
+{\em set} & Pointer to the car database (not modified). \\
 \hline
 {\em count} & Number of cars in the database. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{car__database_8c_a55e9398c0e12ecd2f7e8f6e48de6b827}\label{car__database_8c_a55e9398c0e12ecd2f7e8f6e48de6b827} 
-\index{car\_database.c@{car\_database.c}!search@{search}}
+\Hypertarget{car__database_8c_a30ebe1eca178a6ac70f8b515767905cd}\index{car\_database.c@{car\_database.c}!search@{search}}
 \index{search@{search}!car\_database.c@{car\_database.c}}
 \doxysubsubsection{\texorpdfstring{search()}{search()}}
-{\footnotesize\ttfamily void search (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{struct_cars}{Cars}} \texorpdfstring{$\ast$}{*}}]{set,  }\item[{int}]{count,  }\item[{char}]{choice }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{car__database_8c_a30ebe1eca178a6ac70f8b515767905cd} 
+void search (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{struct_cars}{Cars}} \texorpdfstring{$\ast$}{*}}]{set}{, }\item[{int}]{count}{, }\item[{char}]{choice}{}\end{DoxyParamCaption})}
 
 
 
@@ -151,25 +152,24 @@ This function allows the user to search for cars in the database based on differ
 \item Fuel
 \item Vehicle Type
 \item Registration Number
-\item Return to the main menu
 \end{DoxyEnumerate}
 
 For each criterion, the user can choose to search for an exact match or a partial match.
 
 
 \begin{DoxyParams}{Parameters}
-{\em set} & Pointer to the car database. \\
+{\em set} & Pointer to the car database (not modified). \\
 \hline
 {\em count} & Number of cars in the database. \\
 \hline
 {\em choice} & User\textquotesingle{}s choice for the search criterion. \\
 \hline
 \end{DoxyParams}
-\Hypertarget{car__database_8c_a3940b8524d94a6ad0a3a2805a8256533}\label{car__database_8c_a3940b8524d94a6ad0a3a2805a8256533} 
-\index{car\_database.c@{car\_database.c}!showCars@{showCars}}
+\Hypertarget{car__database_8c_a3940b8524d94a6ad0a3a2805a8256533}\index{car\_database.c@{car\_database.c}!showCars@{showCars}}
 \index{showCars@{showCars}!car\_database.c@{car\_database.c}}
 \doxysubsubsection{\texorpdfstring{showCars()}{showCars()}}
-{\footnotesize\ttfamily void show\+Cars (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{struct_cars}{Cars}} \texorpdfstring{$\ast$}{*}}]{set,  }\item[{int}]{count }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \label{car__database_8c_a3940b8524d94a6ad0a3a2805a8256533} 
+void show\+Cars (\begin{DoxyParamCaption}\item[{const struct \mbox{\hyperlink{struct_cars}{Cars}} \texorpdfstring{$\ast$}{*}}]{set}{, }\item[{int}]{count}{}\end{DoxyParamCaption})}
 
 
 
@@ -179,7 +179,7 @@ This function prints information about each car in the car database, including i
 
 
 \begin{DoxyParams}{Parameters}
-{\em set} & Pointer to the car database. \\
+{\em set} & Pointer to the car database (not modified). \\
 \hline
 {\em count} & Number of cars in the database. \\
 \hline
